@@ -21,7 +21,7 @@ export function getSeedPasswords(env = process.env) {
   }));
 }
 
-// Hanya dipanggil setup/seed, bukan ketika resource membuka koneksi database.
+// Buat akun, device, kelas, dan nilai awal.
 export function seedDatabase(db, env = process.env) {
   if (db.prepare('SELECT COUNT(*) n FROM users').get().n > 0) return false;
   const passwords = getSeedPasswords(env);

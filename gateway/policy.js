@@ -1,6 +1,6 @@
 import { currentPrincipal, deny, nilaiReadDecision, transcriptReadDecision, transcriptSyncDecision, classWriteDecision } from '../shared/index.js';
 
-// Policy Engine: endpoint, identitas, dan atribut database menentukan akses.
+// Tentukan akses dari identitas, endpoint, dan data database.
 export function decideAccess({ db, config, claims, deviceId, method, path, now = new Date() }) {
   const identity = currentPrincipal({ db, config, claims, deviceId, now });
   if (!identity.principal) return identity;

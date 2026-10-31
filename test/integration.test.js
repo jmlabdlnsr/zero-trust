@@ -45,7 +45,7 @@ test('alur HTTP Zero Trust dengan gateway dan dua service nyata', async t => {
   t.after(async () => {
     await Promise.all([stop(gateway), stop(nilai), stop(transkrip)]);
     databases.forEach(conn => conn.close());
-    rmSync(folder, { recursive: true, force: true }); // generated OS temp folder only
+    rmSync(folder, { recursive: true, force: true });
   });
 
   async function call(path, { method = 'GET', body, token, device, base = config.gatewayUrl, headers = {}, raw } = {}) {

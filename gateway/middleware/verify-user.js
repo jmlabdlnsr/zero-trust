@@ -1,6 +1,6 @@
 import { bearerToken, verifyToken, HttpError } from '../../shared/index.js';
 
-// Berlaku untuk access token user maupun token service; scope ditentukan policy.
+// Verifikasi JWT sebelum policy gateway dijalankan.
 export function verifyUser({ config, now }) {
   return (req, res, next) => {
     try {
