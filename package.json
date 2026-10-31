@@ -1,0 +1,26 @@
+{
+  "name": "praktikum-zero-trust-sistem-nilai",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "API Sistem Nilai dengan gateway Zero Trust untuk praktikum",
+  "engines": {
+    "node": ">=24.13.0 <25"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "start": "node scripts/start.js",
+    "start:gateway": "node gateway/index.js",
+    "start:nilai": "node service-nilai/index.js",
+    "start:transkrip": "node service-transkrip/index.js",
+    "db:seed": "node scripts/seed.js",
+    "db:inspect": "node scripts/inspect.js",
+    "audit": "node scripts/inspect.js audit",
+    "demo": "node scripts/demo.js",
+    "test": "node --test --test-concurrency=1 test/*.test.js"
+  },
+  "dependencies": {
+    "express": "5.2.1",
+    "jsonwebtoken": "9.0.3"
+  }
+}
